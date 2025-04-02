@@ -1,0 +1,6 @@
+/*
+    Campos:
+        nombre
+        pais
+        empresa
+*/

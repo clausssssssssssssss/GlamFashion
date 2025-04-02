@@ -1,0 +1,6 @@
+/*
+    Campos:
+       Products
+       state
+       total
+*/
