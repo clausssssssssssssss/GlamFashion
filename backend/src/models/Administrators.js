@@ -8,50 +8,33 @@
 
 import { Schema, model } from "mongoose";
 
-const customersSchema = new Schema(
+const administratorsSchema = new Schema(
   {
     name: {
       type: String,
-      require: true,
+      required: true,
+      trim: true,
     },
-
-    lastName: {
-      type: String,
-    },
-
-    birthday: {
-      type: Date,
-      require: true,
-      min: 0,
-    },
-
     email: {
       type: String,
+      required: true,
+      unique: true,
+      trim: true,
     },
-
-    adress: {
-        type: String,
-      },
-
+    phone: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     password: {
-      type: Number,
-      require: true,
-    },
-
-    telephone: {
-      type: Number,
-      require: true,
-    },
-
-    isVerified: {
-      type: Boolean,
+      type: String,
+      required: true,
+      minlength: 6,
     },
   },
   {
-    timestamps: true,
-    strict: false,
+    timestamps: true, // Crea createdAt y updatedAt automáticamente
   }
 );
 
-export default model("Customers", customersSchema);
-
+export default model("Administrators", administratorsSchema);
